@@ -27,7 +27,6 @@ function List({ data, setData }) {
       ))}
     <hr />
     </div>
-
   );
 }
 

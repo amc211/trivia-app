@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import useAxios from '../hooks/useAxios';
 import Form from './Form';
 import List from './List';
 
@@ -7,21 +8,24 @@ function TriviaApp() {
   const [question, setQuestion] = useState('');
   const [goodAnswer, setGoodAnswer] = useState('');
   const [badAnswers, setBadAnswers] = useState('');
+  const url = 'https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple';
+  const setIsLoadingTrue = true;
 
-  const fetchData = () => async () => {
-    const url = 'https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple';
-    const resp = await fetch(url);
-    const apiData = await resp.json();
-    const results = apiData.results || {};
+  const [rset, setUrl, isLoading, setIsLoading, error] = useAxios();
 
-    setData(Object.keys(results).map((key, index) => {
+  useEffect(() => {
+    setUrl(url);
+    setIsLoading(setIsLoadingTrue);
+  }, [url, setIsLoadingTrue])
+
+  useEffect(() => {
+    const results = rset && rset.results;
+    results && setData(Object.keys(results).map((key, index) => {
       // add a uniq id to each record
       results[key].id = index + 1;
       return results[key]
     }));
-  }
-
-  useEffect(() => fetchData(), []);
+  }, [rset, isLoading, error]);
 
   function handleOnSubmit(event) {
     event.preventDefault();
