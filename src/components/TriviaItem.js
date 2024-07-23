@@ -1,4 +1,5 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, Typography } from 'react';
+
 
 function TriviaItem({ item, data, setData }) {
   const [editMode, setEditMode] = useState(false);
@@ -55,7 +56,7 @@ function TriviaItem({ item, data, setData }) {
             required
           />
         ) : (
-          <span onDoubleClick={handleDoubleClick}>{question}</span>
+          <span onDoubleClick={handleDoubleClick} dangerouslySetInnerHTML={{ __html: question }}></span>
         )}
       </div>
       <div>
@@ -67,7 +68,7 @@ function TriviaItem({ item, data, setData }) {
             required
           />
         ) : (
-          <span onDoubleClick={handleDoubleClick}>{correct_answer}</span>
+          <span onDoubleClick={handleDoubleClick} dangerouslySetInnerHTML={{ __html: correct_answer }}></span>
         )}
       </div>
       <div>
@@ -79,7 +80,7 @@ function TriviaItem({ item, data, setData }) {
             required
           />
         ) : (
-          <span onDoubleClick={handleDoubleClick}>{itemIncorrectAnswers}</span>
+          <span onDoubleClick={handleDoubleClick} dangerouslySetInnerHTML={{ __html: itemIncorrectAnswers }}></span>
         )}
       </div>
     </>
