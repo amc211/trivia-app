@@ -10,7 +10,7 @@ function TriviaList({ data, setData }) {
   return (
     <div>
       {data.map((item) => (
-        <div key={item.id} style={{ marginTop: '25px'}}>
+        <div className="trivia-item" key={item.id}>
             <Item
               item={item}
               data={data} 
@@ -25,7 +25,6 @@ function TriviaList({ data, setData }) {
             </button>
         </div>
       ))}
-    <hr />
     </div>
   );
 }
