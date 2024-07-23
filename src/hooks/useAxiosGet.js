@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function useAxios() {
+function useAxiosGet() {
   const [data, setData] = useState(null);
   const [url, setUrl] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -30,8 +30,7 @@ function useAxios() {
 
 
   return [data, setUrl, isLoading, setIsLoading, error]
-
 }
 
 
-export default useAxios;
+export default useAxiosGet;

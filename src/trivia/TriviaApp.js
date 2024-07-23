@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import useAxios from '../hooks/useAxios';
+import useAxiosGet from '../hooks/useAxiosGet';
 import Form from './Form';
 import List from './List';
 
@@ -11,7 +11,7 @@ function TriviaApp() {
   const url = 'https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple';
   const setIsLoadingTrue = true;
 
-  const [rset, setUrl, isLoading, setIsLoading, error] = useAxios();
+  const [rset, setUrl, isLoading, setIsLoading, error] = useAxiosGet();
 
   useEffect(() => {
     setUrl(url);
