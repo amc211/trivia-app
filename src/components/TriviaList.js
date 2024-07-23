@@ -1,6 +1,6 @@
-import Item from './Item';
+import Item from './TriviaItem';
 
-function List({ data, setData }) {
+function TriviaList({ data, setData }) {
 
   const handleDeleteByIndex = (target) => {
     let filtered = data.filter((item) => item.id !== target);
@@ -30,4 +30,4 @@ function List({ data, setData }) {
   );
 }
 
-export default List;
+export default TriviaList;

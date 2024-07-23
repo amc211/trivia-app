@@ -1,4 +1,4 @@
-import TriviaApp from './trivia/TriviaApp';
+import TriviaApp from './components/TriviaApp';
 
 function App() {
   return (

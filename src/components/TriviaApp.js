@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import useAxiosGet from '../hooks/useAxiosGet';
-import Form from './Form';
-import List from './List';
+import TriviaForm from './TriviaForm';
+import TriviaList from './TriviaList';
 
 function TriviaApp() {
   const [data, setData] = useState([]);
@@ -46,7 +46,7 @@ function TriviaApp() {
 
   return (
     <div className="TriviaApp">
-      <Form
+      <TriviaForm
         question={question}
         setQuestion={setQuestion}
         goodAnswer={goodAnswer}
@@ -55,7 +55,7 @@ function TriviaApp() {
         setBadAnswers={setBadAnswers}
         handleOnSubmit={handleOnSubmit}
       />
-      <List
+      <TriviaList
         data={data}
         setData={setData}
       />

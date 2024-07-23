@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
-function Item({ item, data, setData }) {
+function TriviaItem({ item, data, setData }) {
   const [editMode, setEditMode] = useState(false);
 
   const escFunction = useCallback((event) => {
@@ -86,4 +86,4 @@ function Item({ item, data, setData }) {
   );
 }
 
-export default Item;
+export default TriviaItem;

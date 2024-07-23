@@ -1,8 +1,8 @@
 
-function Form({ handleOnSubmit,
+function TriviaForm({ handleOnSubmit,
   question, setQuestion,
   goodAnswer, setGoodAnswer,
-  badAnswers, setBadAnswers
+  badAnswers, setBadAnswers,
 }) {
 
   const onChangeEvent = (value, key) => {
@@ -50,4 +50,4 @@ function Form({ handleOnSubmit,
   );
 }
 
-export default Form;
+export default TriviaForm;
